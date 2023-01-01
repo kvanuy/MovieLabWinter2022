@@ -1,0 +1,28 @@
+Usage:
+In the terminal, within the same folder of the MovieLab executable file, enter 
+./MovieLab -i <file> -o <file> -f <framenum> -s <WIDTHxHEIGHT> [options]\n"
+	       "Options:\n"
+	       "-aging                Activate the aging filter on every movie frame\n"
+	       "-hflip                Activate horizontal flip on every movie frame\n"
+	       "-edge                 Activate the edge filter on every movie frame\n"
+	       "-crop <start-end>     Crop the movie frames from <start> to <end>\n"
+	       "-fast <factor>        Fast forward the movie by <factor>\n"
+	       "-reverse              Reverse the frame order of the input movie\n"
+	       "-watermark <file>     Add a watermark from <file> to every movie frame\n"
+	       "-spotlight            Spotlight the fade in and fade out\n"
+	       "-zoom                 Zoom in and out the input movie\n"
+	       "-h                    Display this usage information\n"
+
+For example:
+./MovieLab -i engplaza.yuv -o out.yuv -f 70 -s 512x288 -aging
+
+For the sample engplaza.yuv, the dimensions are 512x288 and 70 frames. Mutiple options can be stacked to produce different effects.
+
+To view YUV Movie:
+1) Make sure that the terminal has x11 forwarding enable and a video player to access. For this assignment, I used XMing to view the yuv files
+2) on the terminal same folder with the yuv files, enter  ~eecs22/bin/yay -s <WIDTHxHEIGHT> [FILENAME].yuv
+
+Note: There is a chance that this might not work because this project was done on a secure shell host under a school user account, so user might not have access to eecs22 on another terminal. 
+
+This project was done on Putty and the files were compiled by a make file. To enable that, run 
+scl enable devtoolset-7 tcsh
